@@ -22,7 +22,7 @@ kbd,
   font-size: 13px;
 }
 
-/* ---- 主题变量：三色品牌方案（浅色 / 深色都覆盖） ---- */
+/* ---- 主题变量：三色品牌方案 ---- */
 :root {
   --primary: #c37fe5;
   --secondary: #7fcde7;
@@ -50,7 +50,7 @@ body {
 .profile-mode h1,
 .post-header h1,
 .entry-header h2 a,
-.entry-link {
+.entry-hint-parent {
   background: linear-gradient(90deg, #c37fe5 0%, #d2b0f9 50%, #7fcde7 100%);
   -webkit-background-clip: text;
   background-clip: text;
