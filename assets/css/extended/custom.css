@@ -1,0 +1,79 @@
+/* ===========================================================
+   自定义样式
+   配色：#c37fe5（主） / #d2b0f9（柔） / #7fcde7（次）
+   字体：JetBrains Mono，基准字号 13px
+   =========================================================== */
+
+/* ---- 全局字体：JetBrains Mono，中文回退到系统黑体 ---- */
+body {
+  font-family: 'JetBrains Mono', ui-monospace, 'Cascadia Code',
+    'Microsoft YaHei', 'PingFang SC', 'Noto Sans CJK SC', monospace;
+  font-size: 13px;
+}
+
+code,
+pre,
+.highlight,
+kbd,
+.copy-code {
+  font-family: 'JetBrains Mono', ui-monospace, 'Cascadia Code', Consolas, monospace;
+  font-size: 13px;
+}
+
+/* ---- 主题变量：三色品牌方案（浅色 / 深色都覆盖） ---- */
+:root {
+  --primary: #c37fe5;   /* 主色：链接、标题强调 */
+  --secondary: #7fcde7; /* 次色：元信息强调 */
+  --tertiary: #d2b0f9;  /* 柔色：分隔线、淡边框 */
+}
+
+[data-theme="dark"] {
+  --primary: #c37fe5;
+  --secondary: #7fcde7;
+  --tertiary: #d2b0f9;
+}
+
+/* ---- 页面背景：三色淡渐变（保留正文可读性） ---- */
+body {
+  background: linear-gradient(135deg, #f6eafc 0%, #eef0fb 50%, #e6f6fc 100%);
+  background-attachment: fixed;
+}
+
+[data-theme="dark"] body {
+  background: linear-gradient(135deg, #2a1f33 0%, #1f2230 50%, #1a2733 100%);
+}
+
+/* ---- 站点标题 / 文章标题：三色渐变文字 ---- */
+.logo a,
+.profile-mode h1,
+.post-header h1,
+.entry-header h2 a {
+  background: linear-gradient(90deg, #c37fe5 0%, #d2b0f9 50%, #7fcde7 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ---- 顶部 2px 渐变条 ---- */
+.header {
+  background-image: linear-gradient(90deg, #c37fe5, #d2b0f9, #7fcde7);
+  background-size: 100% 2px;
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+
+/* ---- 选中文字 ---- */
+::selection {
+  background: #d2b0f9;
+  color: #1f1f1f;
+}
+
+/* ---- 链接悬停 ---- */
+a:hover {
+  color: #7fcde7;
+}
+
+/* ---- 回到顶部等小强调 ---- */
+.top-link {
+  color: #c37fe5;
+}
