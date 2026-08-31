@@ -1,13 +1,15 @@
 /* ===========================================================
    自定义样式
    配色：#c37fe5（主） / #d2b0f9（柔） / #7fcde7（次）
-   字体：JetBrains Mono，基准字号 13px
+   字体：JetBrains Mono，全局统一
    =========================================================== */
 
-/* ---- 全局字体：JetBrains Mono，中文回退到系统黑体 ---- */
-body {
-  font-family: 'JetBrains Mono', ui-monospace, 'Cascadia Code',
-  'Microsoft YaHei', 'PingFang SC', 'Noto Sans CJK SC', monospace;
+/* ---- 全局字体：JetBrains Mono ---- */
+body,
+h1, h2, h3, h4, h5, h6,
+p, li, td, th, blockquote,
+a, span, div {
+  font-family: 'JetBrains Mono', monospace;
   font-size: 13px;
 }
 
@@ -16,15 +18,15 @@ pre,
 .highlight,
 kbd,
 .copy-code {
-  font-family: 'JetBrains Mono', ui-monospace, 'Cascadia Code', Consolas, monospace;
+  font-family: 'JetBrains Mono', monospace;
   font-size: 13px;
 }
 
 /* ---- 主题变量：三色品牌方案（浅色 / 深色都覆盖） ---- */
 :root {
-  --primary: #c37fe5;   /* 主色：链接、标题强调 */
-  --secondary: #7fcde7; /* 次色：元信息强调 */
-  --tertiary: #d2b0f9;  /* 柔色：分隔线、淡边框 */
+  --primary: #c37fe5;
+  --secondary: #7fcde7;
+  --tertiary: #d2b0f9;
 }
 
 [data-theme="dark"] {
@@ -33,7 +35,7 @@ kbd,
   --tertiary: #d2b0f9;
 }
 
-/* ---- 页面背景：三色淡渐变（保留正文可读性） ---- */
+/* ---- 页面背景：三色淡渐变 ---- */
 body {
   background: linear-gradient(135deg, #f6eafc 0%, #eef0fb 50%, #e6f6fc 100%);
   background-attachment: fixed;
@@ -47,7 +49,8 @@ body {
 .logo a,
 .profile-mode h1,
 .post-header h1,
-.entry-header h2 a {
+.entry-header h2 a,
+.entry-link {
   background: linear-gradient(90deg, #c37fe5 0%, #d2b0f9 50%, #7fcde7 100%);
   -webkit-background-clip: text;
   background-clip: text;
@@ -78,7 +81,7 @@ a:hover {
   color: #c37fe5;
 }
 
-/* ---- 标题下方的字体：导航菜单（主色 / 悬停次色 / 当前页柔色） ---- */
+/* ---- 导航菜单 ---- */
 .menu a,
 .menu a span {
   color: #c37fe5;
@@ -93,7 +96,7 @@ a:hover {
   color: #d2b0f9;
 }
 
-/* ---- 标题下方的字体：正文各级小标题 ---- */
+/* ---- 正文各级小标题 ---- */
 .post-content h1,
 .post-content h2,
 .post-content h3,
@@ -107,19 +110,16 @@ a:hover {
    正文文字：次色 #7fcde7
    =========================================================== */
 
-/* 正文段落 */
 .post-content p,
 .entry-content p {
   color: #7fcde7;
 }
 
-/* 正文列表 */
 .post-content li,
 .entry-content li {
   color: #7fcde7;
 }
 
-/* 正文表格内容 */
 .post-content td,
 .post-content th,
 .entry-content td,
@@ -127,19 +127,16 @@ a:hover {
   color: #7fcde7;
 }
 
-/* 引用块文字 */
 .post-content blockquote,
 .entry-content blockquote {
   color: #7fcde7;
 }
 
-/* 行内代码 */
 .post-content code:not(pre code),
 .entry-content code:not(pre code) {
   color: #7fcde7;
 }
 
-/* 深色模式：正文保持次色 */
 [data-theme="dark"] .post-content p,
 [data-theme="dark"] .entry-content p,
 [data-theme="dark"] .post-content li,
@@ -159,7 +156,6 @@ a:hover {
    其他文字：柔色 #d2b0f9
    =========================================================== */
 
-/* 主页文章摘要 */
 .post-entry .entry-content p,
 .post-entry .post-summary,
 .post-summary p,
@@ -168,7 +164,6 @@ a:hover {
   color: #d2b0f9;
 }
 
-/* 主页文章列表项 */
 .post-entry h2,
 .post-entry h2 a,
 .post-entry .entry-header h2,
@@ -176,7 +171,6 @@ a:hover {
   color: #d2b0f9;
 }
 
-/* 文章元信息（日期 / 作者 / 标签 / 分类 / 阅读量等） */
 .post-meta,
 .post-meta a,
 .post-meta span,
@@ -194,7 +188,6 @@ a:hover {
   color: #d2b0f9;
 }
 
-/* 侧边栏 / 小部件文字 */
 .sidebar,
 .sidebar p,
 .sidebar li,
@@ -210,7 +203,6 @@ aside a {
   color: #d2b0f9;
 }
 
-/* 页脚文字 */
 .footer,
 .footer p,
 .footer a,
@@ -222,7 +214,6 @@ aside a {
   color: #d2b0f9;
 }
 
-/* 分页导航 */
 .pagination a,
 .pagination span,
 .pager a,
@@ -230,7 +221,6 @@ aside a {
   color: #d2b0f9;
 }
 
-/* 主页文章卡片描述 / 简介 */
 .post-entry .post-description,
 .post-entry .post-excerpt,
 .post-description,
@@ -238,7 +228,6 @@ aside a {
   color: #d2b0f9;
 }
 
-/* 深色模式：其他文字保持柔色 */
 [data-theme="dark"] .post-entry .entry-content p,
 [data-theme="dark"] .post-summary p,
 [data-theme="dark"] .entry-summary p,
@@ -276,7 +265,6 @@ aside a {
    装饰元素
    =========================================================== */
 
-/* 引用块样式 */
 .post-content blockquote,
 .entry-content blockquote {
   border-left: 3px solid #d2b0f9;
@@ -286,7 +274,6 @@ aside a {
   border-radius: 0 6px 6px 0;
 }
 
-/* 行内代码背景 */
 .post-content code:not(pre code),
 .entry-content code:not(pre code) {
   background: rgba(211, 176, 249, 0.15);
@@ -294,13 +281,11 @@ aside a {
   border-radius: 4px;
 }
 
-/* 代码块边框 */
 .post-content pre,
 .entry-content pre {
   border: 1px solid #d2b0f9;
 }
 
-/* 表格样式 */
 .post-content table,
 .entry-content table {
   border-collapse: collapse;
@@ -319,7 +304,6 @@ aside a {
   border: 1px solid #d2b0f9;
 }
 
-/* 正文中的链接 */
 .post-content a,
 .entry-content a {
   color: #c37fe5;
@@ -335,7 +319,6 @@ aside a {
   text-decoration-color: #7fcde7;
 }
 
-/* 列表标记 */
 .post-content ul ::marker,
 .post-content ol ::marker,
 .entry-content ul ::marker,
@@ -343,49 +326,10 @@ aside a {
   color: #d2b0f9;
 }
 
-/* 分割线 */
 .post-content hr,
 .entry-content hr {
   border: none;
   height: 2px;
   background: linear-gradient(90deg, transparent, #d2b0f9, #7fcde7, transparent);
   margin: 1.5em 0;
-}
-
-/* ===========================================================
-   深色模式：强制标题渐变（!important 压过主题的白色覆盖）
-   =========================================================== */
-
-/* 站点标题 */
-[data-theme="dark"] .logo a {
-  background: linear-gradient(90deg, #c37fe5 0%, #d2b0f9 50%, #7fcde7 100%) !important;
-  -webkit-background-clip: text !important;
-  background-clip: text !important;
-  color: transparent !important;
-}
-
-/* 主页文章列表标题 */
-[data-theme="dark"] .post-entry h2 a,
-[data-theme="dark"] .post-entry .entry-header h2 a,
-[data-theme="dark"] article .entry-header h2 a {
-  background: linear-gradient(90deg, #c37fe5 0%, #d2b0f9 50%, #7fcde7 100%) !important;
-  -webkit-background-clip: text !important;
-  background-clip: text !important;
-  color: transparent !important;
-}
-
-/* 文章内页标题 */
-[data-theme="dark"] .post-header h1 {
-  background: linear-gradient(90deg, #c37fe5 0%, #d2b0f9 50%, #7fcde7 100%) !important;
-  -webkit-background-clip: text !important;
-  background-clip: text !important;
-  color: transparent !important;
-}
-
-/* 个人简介页标题 */
-[data-theme="dark"] .profile-mode h1 {
-  background: linear-gradient(90deg, #c37fe5 0%, #d2b0f9 50%, #7fcde7 100%) !important;
-  -webkit-background-clip: text !important;
-  background-clip: text !important;
-  color: transparent !important;
 }
