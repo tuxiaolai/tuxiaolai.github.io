@@ -17,3 +17,103 @@
         trust: true
     });">
 </script>
+
+<!-- 鼠标点击特效 -->
+<style>
+    .click-text {
+        position: fixed;
+        z-index: 9999;
+        pointer-events: none;
+        animation: clickTextFade 2.5s ease-out forwards;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 13px;
+        white-space: nowrap;
+        user-select: none;
+    }
+
+    @keyframes clickTextFade {
+        0% {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+        100% {
+            opacity: 0;
+            transform: translateY(-60px) scale(1.1);
+        }
+    }
+</style>
+
+<script>
+    (function() {
+        const sentences = [
+            "在太阳西斜的这个世界里，置身天上之森。",
+            "等这场战争结束之后，不归之人与望眼欲穿的众人，",
+            "人人本着正义之名，长存不灭的过去、逐渐消逝的未来。",
+            "我回来了，纵使日薄西山，即便看不到未来，",
+            "此时此刻的光辉，盼君勿忘。",
+            "————世界上最幸福的女孩",
+            "",
+            "我在做梦，",
+            "梦见一个永恒却又虚幻，",
+            "一个濒临消亡的世界。",
+            "",
+            "这是不可醒来的梦，",
+            "不可结束的浅眠。",
+            "不可脱离的孤独。",
+            "",
+            "犹如以镜面呈现出濒临消亡的自己一般，",
+            "梦见这样的一个世界。"
+        ];
+
+        const colors = [
+            "#c37fe5",
+            "#d2b0f9",
+            "#7fcde7",
+            "#c37fe5",
+            "#d2b0f9",
+            "#7fcde7",
+            "#c37fe5",
+            "#d2b0f9",
+            "#7fcde7",
+            "#c37fe5",
+            "#d2b0f9",
+            "#7fcde7",
+            "#c37fe5",
+            "#d2b0f9",
+            "#7fcde7",
+            "#c37fe5",
+            "#d2b0f9"
+        ];
+
+        let index = 0;
+
+        document.addEventListener('click', function(e) {
+            // 跳过代码块、链接、按钮等元素
+            if (e.target.closest('pre') || e.target.closest('code') ||
+                e.target.closest('a') || e.target.closest('button') ||
+                e.target.closest('input') || e.target.closest('textarea') ||
+                e.target.closest('.katex')) {
+                return;
+            }
+
+            const text = sentences[index % sentences.length];
+            index++;
+
+            if (!text) return; // 跳过空行
+
+            const el = document.createElement('span');
+            el.className = 'click-text';
+            el.textContent = text;
+            el.style.left = e.clientX + 'px';
+            el.style.top = e.clientY + 'px';
+            el.style.color = colors[(index - 1) % colors.length];
+
+            document.body.appendChild(el);
+
+            // 动画结束后移除
+            el.addEventListener('animationend', function() {
+                el.remove();
+            });
+        });
+    })();
+</script>
