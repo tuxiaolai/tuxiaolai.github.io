@@ -77,3 +77,28 @@ a:hover {
 .top-link {
   color: #c37fe5;
 }
+
+/* ---- 标题下方的字体：导航菜单（主色 / 悬停次色 / 当前页柔色） ---- */
+.menu a,
+.menu a span {
+  color: #c37fe5;
+}
+
+.menu a:hover,
+.menu a span:hover {
+  color: #7fcde7;
+}
+
+.menu a span.active {
+  color: #d2b0f9;
+}
+
+/* ---- 标题下方的字体：正文各级小标题 ---- */
+.post-content h1,
+.post-content h2,
+.post-content h3,
+.post-content h4,
+.post-content h5,
+.post-content h6 {
+  color: #c37fe5;
+}

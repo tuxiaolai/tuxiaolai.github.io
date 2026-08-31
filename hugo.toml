@@ -1,5 +1,5 @@
 baseURL = 'https://tuxiaolai.github.io/'
-title = '兔小赖的技术笔记'
+title = 'Tuxiaolai'
 theme = 'PaperMod'
 # 注意：languageCode 在 Hugo 0.158 已废弃，0.165 下用 locale
 locale = 'zh-CN'
