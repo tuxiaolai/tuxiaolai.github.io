@@ -1,0 +1,73 @@
+baseURL = 'https://tuxiaolai.github.io/'
+title = '兔小赖的技术笔记'
+theme = 'PaperMod'
+# 注意：languageCode 在 Hugo 0.158 已废弃，0.165 下用 locale
+locale = 'zh-CN'
+hasCJKLanguage = true
+
+enableRobotsTXT = true
+paginate = 10
+buildDrafts = false
+buildFuture = false
+buildExpired = false
+pygmentsUseClasses = true
+
+# PaperMod 的搜索依赖首页 JSON 输出，缺了搜索页会是空的
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[params]
+  env = 'production'
+  description = 'C++ / Qt / 算法笔记'
+  author = 'tuxiaolai'
+  defaultTheme = 'auto'
+  ShowReadingTime = true
+  ShowWordCount = true
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowShareButtons = false
+  ShowRssButtonInSectionTermList = true
+  comments = false
+  UseHugoToc = true
+  showtoc = true
+  tocopen = false
+
+  [[params.socialIcons]]
+    name = 'github'
+    url = 'https://github.com/tuxiaolai'
+
+[markup]
+  [markup.highlight]
+    noClasses = false
+    codeFences = true
+    guessSyntax = true
+  [markup.goldmark.renderer]
+    unsafe = false
+
+[menu]
+  [[menu.main]]
+    identifier = 'search'
+    name = '搜索'
+    url = '/search/'
+    weight = 10
+  [[menu.main]]
+    identifier = 'archives'
+    name = '归档'
+    url = '/archives/'
+    weight = 20
+  [[menu.main]]
+    identifier = 'tags'
+    name = '标签'
+    url = '/tags/'
+    weight = 30
+
+[taxonomies]
+  tag = 'tags'
+  category = 'categories'
+
+# 访问统计（可选）。注意 Hugo 0.165 只认 [services]，
+# 旧写法 params.googleAnalytics 已静默失效。
+# [services]
+#   [services.googleAnalytics]
+#     ID = 'G-XXXXXXXXXX'
