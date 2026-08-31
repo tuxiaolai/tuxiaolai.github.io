@@ -7,7 +7,7 @@
 /* ---- 全局字体：JetBrains Mono，中文回退到系统黑体 ---- */
 body {
   font-family: 'JetBrains Mono', ui-monospace, 'Cascadia Code',
-    'Microsoft YaHei', 'PingFang SC', 'Noto Sans CJK SC', monospace;
+  'Microsoft YaHei', 'PingFang SC', 'Noto Sans CJK SC', monospace;
   font-size: 13px;
 }
 
@@ -101,4 +101,114 @@ a:hover {
 .post-content h5,
 .post-content h6 {
   color: #c37fe5;
+}
+
+/* ---- 正文段落 / 列表 / 表格文字：主色 #c37fe5 ---- */
+.post-content p,
+.post-content li,
+.post-content td,
+.post-content th,
+.entry-content p,
+.entry-content li {
+  color: #c37fe5;
+}
+
+/* 深色模式下正文文字：柔色 #d2b0f9 更护眼 */
+[data-theme="dark"] .post-content p,
+[data-theme="dark"] .post-content li,
+[data-theme="dark"] .post-content td,
+[data-theme="dark"] .post-content th,
+[data-theme="dark"] .entry-content p,
+[data-theme="dark"] .entry-content li {
+  color: #d2b0f9;
+}
+
+/* ---- 元信息（日期 / 标签 / 分类等）：次色 #7fcde7 ---- */
+.post-meta,
+.post-meta a,
+.entry-footer,
+.entry-footer span,
+.post-date,
+.post-tags a,
+.post-categories a,
+.breadcrumbs {
+  color: #7fcde7;
+}
+
+/* ---- 引用块：柔色左边框 + 主色文字 ---- */
+.post-content blockquote,
+.entry-content blockquote {
+  border-left: 3px solid #d2b0f9;
+  color: #c37fe5;
+  background: rgba(211, 176, 249, 0.08);
+  padding: 0.8em 1.2em;
+  margin: 1.2em 0;
+  border-radius: 0 6px 6px 0;
+}
+
+/* ---- 行内代码：柔色背景 + 主色文字 ---- */
+.post-content code:not(pre code),
+.entry-content code:not(pre code) {
+  color: #c37fe5;
+  background: rgba(211, 176, 249, 0.15);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* ---- 代码块：柔色边框点缀 ---- */
+.post-content pre,
+.entry-content pre {
+  border: 1px solid #d2b0f9;
+}
+
+/* ---- 表格：柔色边框 + 主色表头底线 ---- */
+.post-content table,
+.entry-content table {
+  border-collapse: collapse;
+}
+
+.post-content th,
+.entry-content th {
+  background: rgba(195, 127, 229, 0.1);
+  border-bottom: 2px solid #c37fe5;
+}
+
+.post-content td,
+.post-content th,
+.entry-content td,
+.entry-content th {
+  border: 1px solid #d2b0f9;
+}
+
+/* ---- 正文中的链接：次色，悬停变主色 ---- */
+.post-content a,
+.entry-content a {
+  color: #7fcde7;
+  text-decoration: underline;
+  text-decoration-color: rgba(127, 205, 231, 0.3);
+  text-underline-offset: 3px;
+  transition: color 0.2s, text-decoration-color 0.2s;
+}
+
+.post-content a:hover,
+.entry-content a:hover {
+  color: #c37fe5;
+  text-decoration-color: #c37fe5;
+}
+
+/* ---- 列表标记：柔色 ---- */
+.post-content ul ::marker,
+.post-content ol ::marker,
+.entry-content ul ::marker,
+.entry-content ol ::marker {
+  color: #d2b0f9;
+}
+
+/* ---- 分割线：柔色 — 次色渐变 ---- */
+.post-content hr,
+.entry-content hr {
+  border: none;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #d2b0f9, #7fcde7, transparent);
+  margin: 1.5em 0;
 }
