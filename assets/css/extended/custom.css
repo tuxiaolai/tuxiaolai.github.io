@@ -333,3 +333,34 @@ aside a {
   background: linear-gradient(90deg, transparent, #d2b0f9, #7fcde7, transparent);
   margin: 1.5em 0;
 }
+
+/* ===========================================================
+   KaTeX 公式字体修复
+   =========================================================== */
+
+/* 强制 KaTeX 使用自己的数学字体，不被 JetBrains Mono 覆盖 */
+.katex,
+.katex * {
+  font-family: KaTeX_Main, 'Times New Roman', serif !important;
+}
+
+.katex .mathit,
+.katex .textit,
+.katex .mathnormal,
+.katex .mathrm {
+  font-family: KaTeX_Math, 'Times New Roman', serif !important;
+}
+
+.katex .mathcal,
+.katex .mathfrak {
+  font-family: KaTeX_Caligraphic, 'Times New Roman', serif !important;
+}
+
+.katex .mathbb {
+  font-family: KaTeX_AMS, 'Times New Roman', serif !important;
+}
+
+/* 公式整体字号稍大一点，与正文协调 */
+.katex {
+  font-size: 1.05em !important;
+}
